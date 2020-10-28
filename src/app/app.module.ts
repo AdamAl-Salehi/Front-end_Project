@@ -9,9 +9,9 @@ import { SectionOfferComponent } from './sections/section-offer/section-offer.co
 import { SectionOfferTechComponent } from './sections/section-offer-tech/section-offer-tech.component';
 import { SectionsComponent } from './sections/sections.component';
 import { SectionOfferTeacherComponent } from './sections/section-offer-teacher/section-offer-teacher.component';
-import { TestimonialComponent } from './testimonial/testimonial.component';
 import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
+
+
 
 @NgModule({
   declarations: [
@@ -21,10 +21,7 @@ import { FooterComponent } from './footer/footer.component';
     SectionOfferTechComponent,
     SectionsComponent,
     SectionOfferTeacherComponent,
-    TestimonialComponent,
-    HeaderComponent,
-    FooterComponent
-
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

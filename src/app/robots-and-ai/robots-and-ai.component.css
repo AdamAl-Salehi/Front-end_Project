@@ -1,0 +1,53 @@
+.header {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.miniHeader {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.title {
+    font-size: 2rem;
+    margin-top: 10rem;
+}
+
+.imgSection1 {
+    margin-top: 10rem;
+}
+
+#img1 {
+    width: 30rem;
+    position: absolute;
+}
+
+#img2 {
+    width: 25rem;
+    position: relative;
+    top: -5rem;
+    right: -10rem;
+}
+
+.bg-transparent img {
+    top: -7rem;
+    position: relative;
+    width: 16rem;
+    border: dotted darkblue;
+}
+
+.secondSection {
+    margin-top: 7rem;
+}
+
+#background {
+    margin-top: 7rem;
+    background: url("/assets/img_section3/bggradient41.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.imgCaption {
+    position: relative;
+    top: -7rem;
+}
