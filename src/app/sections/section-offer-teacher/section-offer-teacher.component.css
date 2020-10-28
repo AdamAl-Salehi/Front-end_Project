@@ -1,0 +1,41 @@
+.offersection {
+    background-image: url("/assets/img_section1/bggradient.jpg");
+    height: 55rem;
+}
+
+img {
+    object-fit: cover;
+    width: 16rem;
+    overflow: hidden;
+}
+
+#img1 {
+    height: 20rem;
+}
+
+#img2 {
+    height: 32rem;
+}
+
+#img3 {
+    height: 18rem;
+}
+
+#img4 {
+    height: 22rem;
+}
+
+.image-container {
+    height: 18rem;
+}
+
+.container {
+    padding-top: 26rem;
+}
+
+.text-container {
+    width: 32rem;
+    margin-top: 2rem;
+    margin-right: 1rem;
+    color: white;
+}

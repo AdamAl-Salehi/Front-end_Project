@@ -1,0 +1,88 @@
+export const CourseList = [
+    {
+        name: 'ASTRO1',
+        squareMeter: '35.89',
+        cabins: 5,
+        prodYear: 2008,
+        info1: "Large sundeck",
+        info2: "Semi-displacement yacht",
+        info3: "Northern European quality",
+        info4: "VAT Paid",
+        img: "/assets/img_section1/course_1.jpg",
+        price: 39999,
+        destination: "Moon",
+        duration: 14
+    },
+    {
+        name: 'ASTRO2',
+        squareMeter: '38.5',
+        cabins: 5,
+        prodYear: 2012,
+        info1: "Large sundeck",
+        info2: "Semi-displacement yacht",
+        info3: "Northern European quality",
+        info4: "VAT Paid",
+        img: "/assets/img_section1/course_2.jpg",
+        price: 44999,
+        destination: "Mars",
+        duration: 31
+    },
+    {
+        name: 'ASTRO3',
+        squareMeter: '44.7',
+        cabins: 7,
+        prodYear: 2017,
+        info1: "Large sundeck",
+        info2: "Semi-displacement yacht",
+        info3: "Northern European quality",
+        info4: "VAT Paid",
+        img: "/assets/img_section1/course_3.jpg",
+        price: 54999,
+        destination: "Venus",
+        duration: 42
+    }
+    // },
+    // {
+    //     name: 'ASTRO4',
+    //     squareMeter: '41.3',
+    //     cabins: 6,
+    //     prodYear: 2015,
+    //     info1: "Large sundeck",
+    //     info2: "Semi-displacement yacht",
+    //     info3: "Northern European quality",
+    //     info4: "VAT Paid",
+    //     img: "/assets/img_section1/course_1.jpg",
+    //     price: 64999,
+    //     destination: "Jupiter",
+    //     duration: 54
+    // },
+    // {
+    //     name: 'ASTRO5',
+    //     squareMeter: '47.8',
+    //     cabins: 8,
+    //     prodYear: 2019,
+    //     info1: "Large sundeck",
+    //     info2: "Semi-displacement yacht",
+    //     info3: "Northern European quality",
+    //     info4: "VAT Paid",
+    //     img: "/assets/img_section1/course_2.jpg",
+    //     price: 89999,
+    //     destination: "Mercury",
+    //     duration: 61
+    // },
+    // {
+    //     name: 'ASTRO6',
+    //     squareMeter: '35.2',
+    //     cabins: 5,
+    //     prodYear: 2011,
+    //     info1: "Large sundeck",
+    //     info2: "Semi-displacement yacht",
+    //     info3: "Northern European quality",
+    //     info4: "VAT Paid",
+    //     img: "/assets/img_section1/course_3.jpg",
+    //     price: 84999,
+    //     destination: "Pluto",
+    //     duration: 76
+    // },
+   ];
+
