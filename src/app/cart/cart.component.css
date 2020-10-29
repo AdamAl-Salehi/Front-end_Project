@@ -29,3 +29,28 @@
     width: 92%;
     margin-left: 0;
 }
+
+.alignleft {
+    float: left;
+    width: 50%;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+}
+
+.alignright {
+    float: left;
+    width: 50%;
+    text-align: right;
+    padding: 0;
+    margin: 0;
+}
+
+.clear {
+    padding: 0;
+    margin: 0;
+}
+
+label {
+    width: 5rem;
+}
