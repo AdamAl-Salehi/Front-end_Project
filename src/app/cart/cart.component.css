@@ -1,0 +1,31 @@
+.cartsection {
+    background-color: #340F6F;
+}
+
+.card input {
+    margin-bottom: 1rem;
+}
+
+.firstHr {
+    border: 0.25rem solid orange;
+    width: 23%;
+    margin-left: 0;
+}
+
+.secondHr {
+    border: 0.25rem solid #007BFF;
+    width: 46%;
+    margin-left: 0;
+}
+
+.thirdHr {
+    border: 0.25rem solid rgb(101, 238, 209);
+    width: 69%;
+    margin-left: 0;
+}
+
+.fourthHr {
+    border: 0.25rem solid #E70A47;
+    width: 92%;
+    margin-left: 0;
+}

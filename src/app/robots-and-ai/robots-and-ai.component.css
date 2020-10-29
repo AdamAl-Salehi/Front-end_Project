@@ -1,3 +1,13 @@
+.imgflex {
+    float: right;
+}
+
+.bubble1 {
+    position: relative;
+    top: -5rem;
+    width: 15rem;
+}
+
 .header {
     font-size: 2rem;
     font-weight: bold;
@@ -9,8 +19,8 @@
 }
 
 .title {
-    font-size: 2rem;
-    margin-top: 10rem;
+    font-size: 1.2rem;
+    margin-top: 5rem;
 }
 
 .imgSection1 {
@@ -18,7 +28,7 @@
 }
 
 #img1 {
-    width: 30rem;
+    width: 28rem;
     position: absolute;
 }
 
@@ -26,14 +36,18 @@
     width: 25rem;
     position: relative;
     top: -5rem;
-    right: -10rem;
+    right: -6rem;
+}
+
+.text {
+    position: relative;
+    top: 5rem;
 }
 
 .bg-transparent img {
     top: -7rem;
     position: relative;
-    width: 16rem;
-    border: dotted darkblue;
+    width: 14rem;
 }
 
 .secondSection {
@@ -43,11 +57,65 @@
 #background {
     margin-top: 7rem;
     background: url("/assets/img_section3/bggradient41.jpg");
-    background-size: 100%;
+    background-size: cover;
     background-repeat: no-repeat;
 }
 
 .imgCaption {
     position: relative;
     top: -7rem;
+}
+
+@media screen and (max-width: 767px) {
+    .bubble1 {
+        position: relative;
+        top: -3.6rem;
+        width: 11rem;
+    }
+    #img1 {
+        width: 20rem;
+    }
+    #img2 {
+        width: 17rem;
+        top: -3rem;
+        right: -5rem;
+    }
+    .title {
+        margin-top: 4rem;
+    }
+    .bg-transparent img {
+        top: -2rem;
+        width: 5rem;
+    }
+    .imgCaption {
+        top: -3rem;
+        font-size: 0.6rem;
+    }
+    iframe {
+        width: fit-content;
+        height: fit-content;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .bubble1 {
+        position: relative;
+        top: -7.3rem;
+        width: 22rem;
+    }
+    .title {
+        margin-top: 5rem;
+    }
+    .bg-transparent img {
+        top: -5rem;
+        width: 10rem;
+    }
+    .imgCaption {
+        top: -5rem;
+        font-size: 0.8rem;
+    }
+    iframe {
+        width: 35rem;
+        height: 20rem;
+    }
 }
