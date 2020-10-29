@@ -1,10 +1,14 @@
 import { Injectable } from '@angular/core';
+import { CourseList } from './CourseList';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
-  courseItems = [];
+  // courseItems = [];
+  courseItems = CourseList;
+
   constructor() { }
 
   addToCart(item) {
@@ -23,4 +27,6 @@ export class CartService {
     this.courseItems = [];
     return this.courseItems;
   }
+
+
 }
