@@ -16,6 +16,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HeroComponent } from './hero/hero.component';
 import { AllOffersComponent } from './all-offers/all-offers.component';
 import { NewsBlogComponent } from './news-blog/news-blog.component';
+import { News1Component } from './news1/news1.component';
 
 
 
@@ -35,7 +36,8 @@ import { NewsBlogComponent } from './news-blog/news-blog.component';
     FooterComponent,
     HeroComponent,
     AllOffersComponent,
-    NewsBlogComponent
+    NewsBlogComponent,
+    News1Component
 
   ],
   imports: [
