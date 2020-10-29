@@ -17,6 +17,7 @@ import { HeroComponent } from './hero/hero.component';
 import { AllOffersComponent } from './all-offers/all-offers.component';
 import { NewsBlogComponent } from './news-blog/news-blog.component';
 import { CourseDetailComponent } from './course-detail/course-detail.component';
+import { News1Component } from './news1/news1.component';
 
 
 
@@ -37,7 +38,8 @@ import { CourseDetailComponent } from './course-detail/course-detail.component';
     HeroComponent,
     AllOffersComponent,
     NewsBlogComponent,
-    CourseDetailComponent
+    CourseDetailComponent,
+    News1Component
 
   ],
   imports: [

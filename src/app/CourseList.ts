@@ -103,4 +103,6 @@ export const CourseList = [
         location: "Server 1",
         size: "10.6 gb"
     },
+
    ];
+

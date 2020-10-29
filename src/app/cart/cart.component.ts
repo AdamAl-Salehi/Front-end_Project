@@ -2,15 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { CartService } from '../cart.service';
 import { FormBuilder } from '@angular/forms';
 import { Vouchers } from '../vouchers'
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css']
 })
+
 export class CartComponent implements OnInit {
 	items;
-  checkoutForm;
   voucherForm;
   voucherRedeemed = false;
   voucherPercent = 0;
@@ -19,12 +20,19 @@ export class CartComponent implements OnInit {
   courseSumOriginal = 0;
   Vouchers = Vouchers;
 
+  checkoutForm: FormGroup;
+
+  // checkoutForm = new FormGroup({
+  //   firstName: new FormControl('',Validators.required),
+  //   lastName: new FormControl('',Validators.required),
+  //   age: new FormControl('',[Validators.required, Validators.pattern("^[0-9]*$"),Validators.maxLength(2),]),
+  //   email:new FormControl('',[Validators.required,Validators.email]),
+  //   address:new FormControl('',Validators.required),
+  // });
+
   constructor(private cartService: CartService, private formBuilder: FormBuilder) { 
-  	this.checkoutForm = this.formBuilder.group({
-     	name: '',
-    	address: ''
-   })
-   this.voucherForm = this.formBuilder.group({
+    this.createForm();
+    this.voucherForm = this.formBuilder.group({
     voucher: '',
 })
   }
@@ -36,6 +44,17 @@ export class CartComponent implements OnInit {
       this.courseSumOriginal = this.courseSum;
     }
   }
+
+  createForm() {
+  	this.checkoutForm = this.formBuilder.group({
+     	firstName: ['', Validators.required],
+     	lastName: ['', Validators.required],
+     	age: ['', Validators.required, Validators.pattern("^[0-9]*$"),Validators.maxLength(2)],
+     	email: ['', Validators.required, Validators.email],
+     	address: ['', Validators.required],
+   })
+  }
+
 
   onVoucherSubmit(userVoucher) {
     console.log(userVoucher);
@@ -56,12 +75,13 @@ export class CartComponent implements OnInit {
   }
 
    onSubmit(customerData) {
-   // Process checkout data here
-   console.warn('Your order has been submitted', customerData);
-
-   this.items = this.cartService.clearCart();
-   this.checkoutForm.reset();
+    if(this.checkoutForm.valid){
+      // Process checkout data here
+      console.warn('Your order has been submitted', customerData);
+      this.items = this.cartService.clearCart();
+      this.checkoutForm.reset();
  }
+}
 
   onVoucher(userVoucher) {
     
