@@ -14,6 +14,7 @@ import { TestimonialComponent } from './testimonial/testimonial.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeroComponent } from './hero/hero.component';
+import { NewsBlogComponent } from './news-blog/news-blog.component';
 
 
 
@@ -31,7 +32,8 @@ import { HeroComponent } from './hero/hero.component';
     TestimonialComponent,
     HeaderComponent,
     FooterComponent,
-    HeroComponent
+    HeroComponent,
+    NewsBlogComponent
 
   ],
   imports: [
