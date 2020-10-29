@@ -1,50 +1,80 @@
-<div class="container">
-    <div class="row">
-        <div class="card col-6 mx-auto">
-            <!-- <img class="card-img-top" src="/assets/img/plane.jpg" alt="plane"> -->
-            <div class="card-body">
-                <h5 class="card-title">Checkout:</h5>
-                <div class="cart-item" *ngFor="let item of items">
-                    <p>{{ item.destination }}: {{ item.price | currency:"EUR" }} </p>
-                </div>
-                <p *ngIf="items.length===0">No destinations in cart yet!</p>
-                <div>
-                    <hr>
-                    <p>Total: {{ courseSum | currency:"EUR" }}</p>
-                    <hr>
-                </div>
-                <ng-container *ngIf="courseSum >= 200 && courseSum < 500;else second">
-                    <p>10% Discount</p>
-                    <hr>
-                    <p>New Total: {{courseSum* 0.9 | currency:"EUR" }}</p>
-                    <hr>
-                </ng-container>
-                <ng-template #second>
-                    <ng-container *ngIf="courseSum >= 500">
-                        <p>20% Discount</p>
-                        <hr>
-                        <p>New Total: {{courseSum* 0.8 | currency:"EUR" }}</p>
-                        <hr>
+<div class="cartsection">
+    <div class="container">
+        <div class="row">
+            <div class="card col-6 mx-auto my-5">
+                <!-- <img class="card-img-top" src="/assets/img/plane.jpg" alt="plane"> -->
+                <div class="card-body">
+                    <h5 class="card-title">Checkout:</h5>
+                    <div class="cart-item" *ngFor="let item of items">
+                        <p>{{ item.destination }}: {{ item.price | currency:"EUR" }} </p>
+                    </div>
+                    <p *ngIf="items.length===0">No destinations in cart yet!</p>
+                    <div>
+                        <hr class="firstHr">
+                        <p>Total: {{ courseSumOriginal | currency:"EUR" }}</p>
+                        <hr class="secondHr">
+                    </div>
+                    <ng-container *ngIf="voucherPercent == 10; else second">
+                        <p>10% Discount applied</p>
+                        <hr class="thirdHr">
+                        <p>New Total: {{ courseSum | currency:"EUR" }}</p>
+                        <hr class="fourthHr">
                     </ng-container>
-                </ng-template>
-                <h5>Billing Address:</h5>
-                <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
-                    <div class="row">
-                        <label class="col-3" for="name">
-                            Name: 
+                    <ng-template #second>
+                        <ng-container *ngIf="voucherPercent == 20; else third">
+                            <p>20% Discount applied</p>
+                            <hr class="thirdHr">
+                            <p>New Total: {{ courseSum | currency:"EUR" }}</p>
+                            <hr class="fourthHr">
+                        </ng-container>
+                    </ng-template>
+                    <ng-template #third>
+                        <ng-container *ngIf="voucherPercent == 30; else fourth">
+                            <p>30% Discount applied</p>
+                            <hr class="thirdHr">
+                            <p>New Total: {{ courseSum | currency:"EUR" }}</p>
+                            <hr class="fourthHr">
+                        </ng-container>
+                    </ng-template>
+                    <ng-template #fourth>
+                        <ng-container *ngIf="voucherPercent == 40">
+                            <p>40% Discount applied</p>
+                            <hr class="thirdHr">
+                            <p>New Total: {{ courseSum | currency:"EUR" }}</p>
+                            <hr class="fourthHr">
+                        </ng-container>
+                    </ng-template>
+                    <form [formGroup]="voucherForm" (ngSubmit)="onVoucherSubmit(voucherForm.value)">
+                        <div class="row">
+                            <label class="col-3" for="name">
+                                Voucher: 
+                            </label>
+                            <input class="col-8 mr-1" id="voucher" type="text" formControlName="voucher">
+                        </div>
+                        <div class="row">
+                            <button class="btn btn-primary my-2 my-sm-0 mx-auto " type="submit">Redeem</button>
+                        </div>
+                    </form>
+
+                    <h5>Billing Address:</h5>
+                    <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+                        <div class="row">
+                            <label class="col-3" for="name">
+                                Name: 
+                            </label>
+                            <input class="col-8 mr-1" id="name" type="text" formControlName="name">
+                        </div>
+                        <div class="row">
+                            <label class="col-3" for="address">
+                        Address: 
                         </label>
-                        <input class="col-8 mr-1" id="name" type="text" formControlName="name">
-                    </div>
-                    <div class="row">
-                        <label class="col-3" for="address">
-                      Address: 
-                    </label>
-                        <input class="col-8 mr-1" id="address" type="text" formControlName="address">
-                    </div>
-                    <div class="row">
-                        <button class="btn btn-primary my-2 my-sm-0 mx-auto " type="submit">Purchase</button>
-                    </div>
-                </form>
+                            <input class="col-8 mr-1" id="address" type="text" formControlName="address">
+                        </div>
+                        <div class="row">
+                            <button class="btn btn-primary my-2 my-sm-0 mx-auto " type="submit">Purchase</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
