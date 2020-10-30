@@ -9,13 +9,12 @@ import { CourseList } from '../CourseList';
 })
 export class AllOffersComponent implements OnInit {
   courses=CourseList;
-
+  search='';
 
   constructor() { }
 
   ngOnInit() {
-//default setting when the page loads, can be changed or deleted
-  	this.courses = this.courses.sort((low, high) => low.price - high.price);
+
   }
 
 

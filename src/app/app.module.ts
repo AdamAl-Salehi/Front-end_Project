@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,7 +19,7 @@ import { AllOffersComponent } from './all-offers/all-offers.component';
 import { NewsBlogComponent } from './news-blog/news-blog.component';
 import { CourseDetailComponent } from './course-detail/course-detail.component';
 import { News1Component } from './news1/news1.component';
-
+import { FilterPipe } from './filter.pipe';
 
 
 
@@ -39,13 +40,15 @@ import { News1Component } from './news1/news1.component';
     AllOffersComponent,
     NewsBlogComponent,
     CourseDetailComponent,
-    News1Component
+    News1Component,
+    FilterPipe
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
