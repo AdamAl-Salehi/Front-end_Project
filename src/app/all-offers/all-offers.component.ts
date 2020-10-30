@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CourseList } from '../CourseList';
+import { CartService } from '../cart.service';
 
 
 @Component({
@@ -11,7 +12,12 @@ export class AllOffersComponent implements OnInit {
   courses=CourseList;
 
 
-  constructor() { }
+  constructor(private cartService: CartService) { }
+
+  addToCart(courseItems) {
+    window.alert("Your course has been added to the cart!");
+    this.cartService.addToCart(courseItems);
+  }
 
   ngOnInit() {
 //default setting when the page loads, can be changed or deleted

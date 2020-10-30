@@ -20,18 +20,15 @@ export class CartComponent implements OnInit {
   courseSumOriginal = 0;
   Vouchers = Vouchers;
 
-  checkoutForm: FormGroup;
-
-  // checkoutForm = new FormGroup({
-  //   firstName: new FormControl('',Validators.required),
-  //   lastName: new FormControl('',Validators.required),
-  //   age: new FormControl('',[Validators.required, Validators.pattern("^[0-9]*$"),Validators.maxLength(2),]),
-  //   email:new FormControl('',[Validators.required,Validators.email]),
-  //   address:new FormControl('',Validators.required),
-  // });
+  checkoutForm = new FormGroup({
+    firstName: new FormControl('',Validators.required),
+    lastName: new FormControl('',Validators.required),
+    age: new FormControl('',[Validators.required, Validators.pattern("^[0-9]*$"),Validators.maxLength(2),]),
+    email:new FormControl('',[Validators.required,Validators.email]),
+    address:new FormControl('',Validators.required),
+  });
 
   constructor(private cartService: CartService, private formBuilder: FormBuilder) { 
-    this.createForm();
     this.voucherForm = this.formBuilder.group({
     voucher: '',
 })
@@ -44,17 +41,6 @@ export class CartComponent implements OnInit {
       this.courseSumOriginal = this.courseSum;
     }
   }
-
-  createForm() {
-  	this.checkoutForm = this.formBuilder.group({
-     	firstName: ['', Validators.required],
-     	lastName: ['', Validators.required],
-     	age: ['', Validators.required, Validators.pattern("^[0-9]*$"),Validators.maxLength(2)],
-     	email: ['', Validators.required, Validators.email],
-     	address: ['', Validators.required],
-   })
-  }
-
 
   onVoucherSubmit(userVoucher) {
     console.log(userVoucher);
