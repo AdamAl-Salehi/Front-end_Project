@@ -1,7 +1,7 @@
 <div class="container">
-  <div class="row mt-5 pt-5">
-    <div class="col-3">
-      <select id="sort-by" class="custom-select animate__animated animate__fadeInDown animate__slow" (change)="sort($event)">
+    <div class="row mt-5 pt-5">
+        <div class="col-3">
+            <select id="sort-by" class="custom-select animate__animated animate__fadeInDown animate__slow" (change)="sort($event)">
         <option value="" selected disabled hidden>Sort By</option>
         <option value="Name">Name</option>
         <option value="Low">Low to High Price</option>
@@ -33,12 +33,10 @@
               <p class="card-text"><small class="text-muted">{{ course.teacher }} | {{ course.location }} | Year {{ course.prodYear }} | {{ course.price | currency: 'EUR' }}</small></p>
               <div class="row justify-content-around">
                 <button class="btn btn-primary" [routerLink]="['/travels', courseId]">LEARN MORE</button>
-                <button class="btn btn-danger" [routerLink]="['/travels', courseId]">BUY NOW</button>
+                <button class="btn btn-danger" (click)="addToCart(course)">BUY NOW</button>
               </div>
+
             </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
 </div>

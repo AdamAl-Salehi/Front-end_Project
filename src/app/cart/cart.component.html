@@ -1,8 +1,7 @@
 <div class="cartsection">
     <div class="container">
         <div class="row">
-            <div class="card col-10 col-sm-10 col-md-8 col-lg-6 mx-auto my-5">
-                <!-- <img class="card-img-top" src="/assets/img/plane.jpg" alt="plane"> -->
+            <div class="card col-10 col-sm-10 col-md-8 col-lg-6 mx-auto">
                 <div class="card-body">
                     <h5 class="card-title">Checkout:</h5>
                     <div class="cart-item" *ngFor="let item of items">
@@ -13,7 +12,6 @@
                     </div>
                     <p *ngIf="items.length===0">No courses in cart yet!</p>
                     <div class="text-box">
-                        <hr class="firstHr">
                         <p class="alignleft">Total</p>
                         <p class="alignright">{{ courseSumOriginal | currency:"EUR" }}</p>
                         <div class="clear" style="clear: both;"></div>
@@ -101,7 +99,13 @@
                         </div>
                         <div *ngIf="checkoutForm.controls['age'].invalid && (checkoutForm.controls['age'].dirty || checkoutForm.controls['age'].touched)" class="alert alert-danger">
                             <div *ngIf="checkoutForm.controls['age'].errors.required">
-                                Age is required and has to consist of at least two numbers.
+                                Age is required.
+                            </div>
+                            <div *ngIf="checkoutForm.controls['age'].hasError('maxlength')">
+                                You can't be older than 99.
+                            </div>
+                            <div *ngIf="checkoutForm.controls['age'].errors.pattern">
+                                You can't enter letters.
                             </div>
                         </div>
                         <div class="row">
@@ -112,7 +116,10 @@
                         </div>
                         <div *ngIf="checkoutForm.controls['email'].invalid && (checkoutForm.controls['email'].dirty || checkoutForm.controls['email'].touched)" class="alert alert-danger">
                             <div *ngIf="checkoutForm.controls['email'].errors.required">
-                                E-Mail is required and must contain an @-symbol.
+                                E-Mail is required.
+                            </div>
+                            <div *ngIf="checkoutForm.controls['email'].errors.email">
+                                E-Mail must contain an @-symbol.
                             </div>
                         </div>
                         <div class="row">

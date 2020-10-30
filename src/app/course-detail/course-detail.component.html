@@ -2,18 +2,18 @@
   <div class="jumbotron mt-5 pt-5 animate__animated animate__rotateInDownRight animate__slow">
     <h1 class="display-4">{{ course.name }}</h1>
     <div class="row">
-    <ul class="col-5 offset-1">
-      <li>{{ course.info1 }}</li>
-      <li>{{ course.info2 }}</li>
-      <li>{{ course.info3 }}</li>
-      <li>{{ course.info4 }}</li>
-    </ul>
-    <ul class="col-5 offset-1">
-      <li>{{ course.teacher }}</li>
-      <li>{{ course.location }}</li>
-      <li>{{ course.size }}</li>
-      <li>{{ course.prodYear }}</li>
-    </ul>
+      <ul class="col-5 offset-1">
+        <li>{{ course.info1 }}</li>
+        <li>{{ course.info2 }}</li>
+        <li>{{ course.info3 }}</li>
+        <li>{{ course.info4 }}</li>
+      </ul>
+      <ul class="col-5 offset-1">
+        <li>Teacher: {{ course.teacher }}</li>
+        <li>Location: {{ course.location }}</li>
+        <li>Size: {{ course.size }}</li>
+        <li>Production Year: {{ course.prodYear }}</li>
+      </ul>
     </div>
     <hr class="my-4">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -43,6 +43,7 @@
       </a>
     </div>
     <h2 class="text-right p-2">{{ course.price | currency: 'EUR' }}</h2>
-    <a class="btn btn-danger btn-lg btn-block" href="#" role="button">BUY</a>
+    <button class="btn btn-danger btn-lg btn-block" (click)="addToCart(course)">BUY</button>
+    <button class="btn btn-primary btn-lg btn-block" routerLink="/travels">BACK TO OFFERS</button>
   </div>
 </div>

@@ -67,10 +67,8 @@
 }
 
 @media screen and (max-width: 767px) {
-    .bubble1 {
-        position: relative;
-        top: -3.6rem;
-        width: 11rem;
+    .imgflex {
+        float: none;
     }
     #img1 {
         width: 20rem;
@@ -98,10 +96,8 @@
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
-    .bubble1 {
-        position: relative;
-        top: -7.3rem;
-        width: 22rem;
+    .imgflex {
+        float: none;
     }
     .title {
         margin-top: 5rem;
