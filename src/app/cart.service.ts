@@ -6,13 +6,14 @@ import { CourseList } from './CourseList';
   providedIn: 'root'
 })
 export class CartService {
-  // courseItems = [];
-  courseItems = CourseList;
+  courseItems = [];
+  // courseItems = CourseList;
 
   constructor() { }
 
   addToCart(item) {
     this.courseItems.push(item);
+    console.log(this.courseItems);
   }
 
   getCourseItems() {
